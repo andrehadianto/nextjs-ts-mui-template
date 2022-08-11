@@ -3,11 +3,13 @@ import { ThemeProvider } from '@mui/material/styles';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 
+import { CoreLayout } from '@/common/components/CoreLayout';
 import { PageHead } from '@/common/components/PageHead';
 
 import theme from '@/theme';
 
-export const App = ({ Component, pageProps }: AppProps) => {
+export const App = ({ Component, pageProps }) => {
+  const Layout = Component.layout ? Component.layout : CoreLayout;
   return (
     <>
       <Head>
